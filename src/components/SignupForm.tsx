@@ -1,12 +1,10 @@
 "use client";
 
+import { RegisterType } from "@/lib/type";
+import { registerSchema } from "@/lib/zodSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "./shadcnui/button";
-import { Field, FieldGroup, FieldLabel, FieldSet } from "./shadcnui/field";
-import { Input } from "./shadcnui/input";
-import { RegisterType } from "@/lib/type";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema } from "@/lib/zodSchema";
 import {
 	Form,
 	FormControl,
@@ -15,6 +13,7 @@ import {
 	FormLabel,
 	FormMessage,
 } from "./shadcnui/form";
+import { Input } from "./shadcnui/input";
 
 const SignupForm = () => {
 	const rhform = useForm<RegisterType>({

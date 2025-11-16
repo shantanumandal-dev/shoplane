@@ -15,7 +15,6 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "../shadcnui/dropdown-menu";
-import ThemeToggleButton from "../ThemeToggleButton";
 
 const Header = () => {
 	return (
