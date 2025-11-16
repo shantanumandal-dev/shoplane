@@ -15,6 +15,7 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "../shadcnui/dropdown-menu";
+import ThemeToggleButton from "../ThemeToggleButton";
 
 const Header = () => {
 	return (
@@ -40,35 +41,39 @@ const Header = () => {
 
 				<nav className="flex items-center gap-4">
 					<Link href={"/"}></Link>
-					<Link href={"/"}>
-						<DropdownMenu>
-							<DropdownMenuTrigger className="flex cursor-pointer gap-2">
-								<CircleUserRound />
-								Profile
-							</DropdownMenuTrigger>
-							<DropdownMenuContent>
-								<DropdownMenuLabel>
-									Welcome <br />{" "}
-									<p className="font-light">
-										To access account and manage orders
-									</p>
-								</DropdownMenuLabel>
-								<DropdownMenuSeparator />
-								<DropdownMenuItem>
+					<DropdownMenu>
+						<DropdownMenuTrigger className="flex cursor-pointer gap-2">
+							<CircleUserRound />
+							Profile
+						</DropdownMenuTrigger>
+						<DropdownMenuContent>
+							<DropdownMenuLabel>
+								Welcome <br />{" "}
+								<p className="font-light">
+									To access account and manage orders
+								</p>
+							</DropdownMenuLabel>
+							<DropdownMenuSeparator />
+
+							<Link href={"/login"}>
+								<DropdownMenuItem className="cursor-pointer">
 									Log In <LogIn />
 								</DropdownMenuItem>
-								<DropdownMenuItem>
+							</Link>
+
+							<Link href={"/signup"}>
+								<DropdownMenuItem className="cursor-pointer">
 									Sign Up <UserRoundCheck />
 								</DropdownMenuItem>
-								<DropdownMenuItem>
-									Shoplane Premium <BadgePlus color="#ff0000" />
-								</DropdownMenuItem>
-								<DropdownMenuItem>
-									Help & Support <BadgeInfo />
-								</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
-					</Link>
+							</Link>
+							<DropdownMenuItem>
+								Shoplane Premium <BadgePlus color="#ff0000" />
+							</DropdownMenuItem>
+							<DropdownMenuItem>
+								Help & Support <BadgeInfo />
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 
 					{/* <ThemeToggleButton /> */}
 				</nav>
