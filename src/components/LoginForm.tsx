@@ -14,6 +14,7 @@ import {
 	FormMessage,
 } from "./shadcnui/form";
 import { Input } from "./shadcnui/input";
+import { toast } from "react-toastify";
 
 const LoginForm = () => {
 	const rhform = useForm<LoginType>({
@@ -27,6 +28,8 @@ const LoginForm = () => {
 
 	const loginfunc = async (loginData: LoginType) => {
 		console.log(loginData);
+
+		toast.success("login successfully");
 	};
 
 	return (
@@ -43,7 +46,7 @@ const LoginForm = () => {
 								<FormLabel>Phone</FormLabel>
 								<FormControl>
 									<Input
-										type="email"
+										type="number"
 										placeholder="Enter your email"
 										{...field}
 									/>
