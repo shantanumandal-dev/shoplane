@@ -4,6 +4,7 @@ import { LoginType } from "@/lib/type";
 import { loginSchema } from "@/lib/zodSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { Button } from "./shadcnui/button";
 import {
 	Form,
 	FormControl,
@@ -13,13 +14,12 @@ import {
 	FormMessage,
 } from "./shadcnui/form";
 import { Input } from "./shadcnui/input";
-import { Button } from "./shadcnui/button";
 
 const LoginForm = () => {
 	const rhform = useForm<LoginType>({
 		resolver: zodResolver(loginSchema),
 		defaultValues: {
-			email: "",
+			phone: "",
 			password: "",
 		},
 		mode: "all",
@@ -37,10 +37,10 @@ const LoginForm = () => {
 					className="grid gap-6">
 					<FormField
 						control={rhform.control}
-						name="email"
+						name="phone"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>Email</FormLabel>
+								<FormLabel>Phone</FormLabel>
 								<FormControl>
 									<Input
 										type="email"
@@ -72,7 +72,11 @@ const LoginForm = () => {
 							</FormItem>
 						)}
 					/>
-					<Button type="submit">Log In</Button>
+					<Button
+						type="submit"
+						className="cursor-pointer">
+						Log In
+					</Button>
 				</form>
 			</Form>
 		</>

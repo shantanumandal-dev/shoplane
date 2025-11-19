@@ -20,7 +20,7 @@ const SignupForm = () => {
 		resolver: zodResolver(registerSchema),
 		defaultValues: {
 			name: "",
-			email: "",
+			phone: "",
 			password: "",
 		},
 		mode: "all",
@@ -57,14 +57,14 @@ const SignupForm = () => {
 
 					<FormField
 						control={rhform.control}
-						name="email"
+						name="phone"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>Email</FormLabel>
+								<FormLabel>Phone</FormLabel>
 								<FormControl>
 									<Input
-										type="email"
-										placeholder="Enter your email"
+										type="number"
+										placeholder="Enter your Phone Number"
 										{...field}
 									/>
 								</FormControl>
@@ -92,7 +92,11 @@ const SignupForm = () => {
 							</FormItem>
 						)}
 					/>
-					<Button type="submit">Submit</Button>
+					<Button
+						type="submit"
+						className="cursor-pointer">
+						Submit
+					</Button>
 				</form>
 			</Form>
 		</>
